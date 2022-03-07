@@ -44,6 +44,19 @@ void loop()
         myPlaymp3->loop();
         delay(1);
     } else {
+        if (myBle->isReceiveMessage())
+        {
+            char buffer[128];
+            myBle->getMessage(buffer, sizeof(buffer));
+            if (0 == strcmp("1", buffer))
+            {
+                value = 1;
+            } else {
+                value = 0;
+            }
+            myBle->setManufactureData(value);
+            myPlaymp3->play(value);
+        }
         delay(100);
     }
 }
