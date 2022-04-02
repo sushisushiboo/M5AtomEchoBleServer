@@ -98,3 +98,8 @@ void playmp3::loop()
     }
   }
 }
+
+int playmp3::getFileCount()
+{
+  return this->fileCount;
+}

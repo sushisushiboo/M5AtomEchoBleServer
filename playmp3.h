@@ -9,6 +9,7 @@ public:
     bool play(int fileNo);
     bool isPlaying();
     void loop();
+    int getFileCount();
 
 private:
     void getMP3FileList();
